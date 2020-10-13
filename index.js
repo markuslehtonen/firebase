@@ -10,7 +10,7 @@ exports.handleStorageUpload = functions.storage.object().onFinalize(async (objec
         return null;
     }
 
-    // Rememeber to return a promise.
+    // Remember to return a promise.
     return file.getMetaData()
         .then(metaData => {
             functions.logger.log('Uploaded image metadata JSON:', JSON.stringify(metaData));
